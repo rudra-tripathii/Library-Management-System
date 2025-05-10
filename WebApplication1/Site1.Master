@@ -1,0 +1,109 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication1.Site1" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <title>Library Management</title>
+
+    <!-- Meta tags for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #007bff;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #f1f1f1 !important;
+        }
+
+        .footer-main {
+            padding: 15px 0;
+            font-size: 15px;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- NAVIGATION -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="homepage.aspx">📚LibraryManagement</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><asp:LinkButton ID="LinkButtonHome" runat="server" CssClass="nav-link" OnClick="LinkButtonHome_Click">Home</asp:LinkButton></li>
+                        <li class="nav-item"><asp:LinkButton ID="AboutUS1" runat="server" CssClass="nav-link" OnClick="AboutUS1_Click">About Us</asp:LinkButton></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Terms</a></li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><asp:LinkButton ID="LinkButton4" runat="server" CssClass="nav-link" OnClick="LinkButton4_Click">View Books</asp:LinkButton></li>
+                        <li class="nav-item"><asp:LinkButton ID="LinkButton1" runat="server" CssClass="nav-link" OnClick="LinkButton1_Click">Login</asp:LinkButton></li>
+                        <li class="nav-item"><asp:LinkButton ID="LinkButton2" runat="server" CssClass="nav-link" OnClick="LinkButton2_Click">Sign Up</asp:LinkButton></li>
+                        <li class="nav-item"><asp:LinkButton ID="LinkButton3" runat="server" CssClass="nav-link" OnClick="LinkButton3_Click">Logout</asp:LinkButton></li>
+                        <li class="nav-item">
+                            <asp:LinkButton ID="LinkButton5" runat="server" CssClass="nav-link text-primary fw-semibold" OnClick="LinkButton5_Click"></asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <div class="container my-4">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+        </div>
+
+        <!-- FOOTER LINKS -->
+        <footer class="bg-secondary text-light text-center footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <asp:LinkButton ID="LinkButton6" runat="server" CssClass="text-light px-2 text-decoration-none" OnClick="LinkButton6_Click">Admin Login</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton7" runat="server" CssClass="text-light px-2 text-decoration-none" OnClick="LinkButton7_Click">Author Management</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton8" runat="server" CssClass="text-light px-2 text-decoration-none" OnClick="LinkButton8_Click">Publisher Management</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton9" runat="server" CssClass="text-light px-2 text-decoration-none" OnClick="LinkButton9_Click">Book Inventory</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton10" runat="server" CssClass="text-light px-2 text-decoration-none" OnClick="LinkButton10_Click">Book Issuing</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton11" runat="server" CssClass="text-light px-2 text-decoration-none" OnClick="LinkButton11_Click">Member Management</asp:LinkButton>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- COPYRIGHT -->
+        <footer class="bg-black text-light py-2 text-center">
+            <div class="container">
+                <small>© 2022 - All Rights with the Company</small>
+            </div>
+        </footer>
+    </form>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+</body>
+</html>
